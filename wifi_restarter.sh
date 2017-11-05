@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: use the routers IP instead of DNS
 # The IP for the server you wish to ping (8.8.8.8 is a public Google DNS server)
 SERVER=8.8.8.8
 
