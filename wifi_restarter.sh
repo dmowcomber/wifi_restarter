@@ -7,9 +7,13 @@ IP=8.8.8.8
 # Only send two pings, sending output to /dev/null
 ping -c2 ${IP} > /dev/null
 
+# log things to syslog
+exec 1> >(logger -s -t $(basename $0)) 2>&1
+
 # If the return code from ping ($?) is not 0 (meaning there was an error and the IP was unreachable)
 if [ $? != 0 ]
 then
+    echo "couldn't ping $IP. restarting wlan0"
     # Restart the wireless interface
     ifdown --force wlan0
     ifup wlan0
