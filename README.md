@@ -13,4 +13,8 @@ sudo vi /etc/crontab
 > */5 *   * * *   root    /usr/local/bin/wifi_restarter.sh
 
 ### view logs
+```
 grep wifi_restarter.sh /var/log/messages
+# or
+tail -f /var/log/messages | grep wifi_restarter.sh
+```
