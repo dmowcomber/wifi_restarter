@@ -8,6 +8,6 @@ sudo cp wifi_restarter.sh /usr/local/bin
 
 ### add the following line to the end of /ect/crontab to run the script every 5 minutes
 ```bash
-sudo vi /ect/crontab
+sudo vi /etc/crontab
 ```
 > */5 *   * * *   root    /usr/local/bin/wifi_restarter.sh
